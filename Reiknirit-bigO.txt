@@ -1,0 +1,44 @@
+O(n)
+
+bool ContainsValue(IList<string> elements, string value)
+{
+    foreach (var element in elements)
+    {
+        if (element == value) return true;
+    }
+
+    return false;
+}
+
+O(n2)
+
+bool ContainsDuplicates(IList<string> elements)
+{
+    for (var outer = 0; outer < elements.Count; outer++)
+    {
+        for (var inner = 0; inner < elements.Count; inner++)
+        {
+            // Don't compare with self
+            if (outer == inner) continue;
+
+            if (elements[outer] == elements[inner]) return true;
+        }
+    }
+
+    return false;
+}
+
+O(2n)
+
+int Fibonacci(int number)
+{
+    if (number <= 1) return number;
+
+    return Fibonacci(number - 2) + Fibonacci(number - 1);
+}
+
+O(n log(n))
+
+for (i = 0; i < log2(input.count); i++) {
+    doSomething(...);
+}
