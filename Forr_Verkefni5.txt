@@ -1,0 +1,64 @@
+https://visualgo.net/bn/sorting
+
+1)Bubble Sort/Quick Sort
+
+Nota VisuAlgo til að testa
+
+a)
+Slembnar tölur sem voru notaðar: 3,44,38,5,47,15,36,26,27,2,46,4,19,50,48
+Bubble: 40 sec
+Quick: 23 sec
+Stærðin hefur áhrif hjá bubble með því að það tók næstum tvisvar sinnum leingur að sorta það sama en hjæa quick sort
+
+b)
+Bubble vaxandi: 5 sec
+Tók næstum eingan tíma því fann að næsta talan er stærri og endaði á stærstu tölu
+Bubble lækandi: 1 min
+Tók leingri tíma því þurfti að færa fyrstu töluna yfir aftur og aftur
+Bubble slembin: 40 sec
+Var notað sama og í a þannig tók eins tíma
+
+Quick vaxandi: 38 sec
+Tók leingri tíma því þurfti að fara í gégnum allar tölur aftur og aftur til að finna að það er orðið raðað
+Quick lækandi: 39 sec
+Tók svipaðan tíma því þyrfti að fara jafn oft í gégnum allt til að sjá hvort er raðað
+Quick slembin: 23 sec
+Var notað sama og í a þannig tók eins tíma
+
+
+Hvernið inntakið er hefur stóra áhryf á þessi sorting reiknirit meira samnt hjá Bubble sort
+
+c)
+Bubble allt sama: 5 sec
+Eins og Bubble vaxandi
+Bubble allt ólík: 40 sec
+Eins og Bubble slembin
+
+Quick allt sama: 38 sec
+Eins og Quick vaxandi
+Quick allt ólík: 23 sec
+Eins og Quick slembin
+
+d)
+Það væri betra að nota annað fyrir mysmunandi hluti sem það þarf að sorta
+
+2)
+
+      public static int IntArrayBinarySearch(int[] data, int item) {
+
+         int min = 0;
+         int N=data.Length;
+         int max= N-1;
+         do {
+            int mid = (min+max) / 2;
+            if (item > data[mid])
+               min = mid + 1;
+            else
+               max = mid - 1;
+            if (data[mid] == item)
+               return mid;
+            //if (min > max)
+            //   break;
+         } while(min <= max);
+         return -1;
+      }
